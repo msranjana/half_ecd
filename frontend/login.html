@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Child Development System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <!-- Parent Login Form -->
+        <div id="parent-login" class="login-panel">
+            <h3>Parent Login</h3>
+            <form id="parent-login-form">
+                <input type="text" id="parent-child-id" placeholder="Enter Child ID" required>
+                <input type="password" id="parent-password" placeholder="Password" required>
+                <button type="submit">Login as Parent</button>
+            </form>
+        </div>
+
+        <!-- Admin Login Form -->
+        <div id="admin-login" class="login-panel">
+            <h3>Admin Login</h3>
+            <form id="admin-login-form">
+                <input type="text" id="admin-username" placeholder="Username" required>
+                <input type="password" id="admin-password" placeholder="Password" required>
+                <button type="submit">Login as Admin</button>
+            </form>
+        </div>
+
+        <p id="loginError" style="color: red;"></p>
+        <p><a href="register.html">Don't have an account? Sign up here.</a></p>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

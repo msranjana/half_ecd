@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Child Development System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Sign Up</h2>
+
+        <!-- Parent Sign-Up Form -->
+        <div id="parent-register" class="register-panel">
+            <h3>Parent Sign Up</h3>
+            <form id="parent-register-form">
+                <input type="text" id="parent-child-id-signup" placeholder="Enter Child ID" required>
+                <input type="text" id="parent-username" placeholder="Username" required>
+                <input type="password" id="parent-password-signup" placeholder="Password" required>
+                <button type="submit">Sign Up as Parent</button>
+            </form>
+        </div>
+
+        <!-- Admin Sign-Up Form -->
+        <div id="admin-register" class="register-panel">
+            <h3>Admin Sign Up</h3>
+            <form id="admin-register-form">
+                <input type="text" id="admin-username-signup" placeholder="Username" required>
+                <input type="password" id="admin-password-signup" placeholder="Password" required>
+                <button type="submit">Sign Up as Admin</button>
+            </form>
+        </div>
+
+        <p id="signupError" style="color: red;"></p>
+        <p><a href="login.html">Already have an account? Login here.</a></p>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

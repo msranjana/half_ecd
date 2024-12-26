@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/frontend/css/styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <ul>
+            <li><a href="#" id="dashboard-link">Dashboard</a></li>
+            <li><a href="#" id="manage-children-link">Manage Children</a></li>
+            <li><a href="#" id="manage-vaccines-link">Manage Vaccines</a></li>
+            <li><a href="#" id="manage-health-records-link">Manage Health Records</a></li>
+            <li><a href="#" id="manage-physical-records-link">Manage Physical Records</a></li>
+            <li><a href="#" id="manage-hospitals-link">Manage Hospitals</a></li>
+            <li><a href="#" id="manage-caretakers-link">Manage Caretakers</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div id="main-content">
+        <h1>Admin Dashboard</h1>
+
+        <!-- System Overview Section -->
+        <div id="overview">
+            <h2>System Overview</h2>
+            <p>Total Number of Children: <span id="children-count">Loading...</span></p>
+            <p>Upcoming Vaccinations: <span id="upcoming-vaccinations">Loading...</span></p>
+        </div>
+
+        <!-- Children Data Summary -->
+        <div id="children-table">
+            <h3>Children Data</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Vaccination Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="children-list">
+                    <!-- Child data will be dynamically populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Vaccine Management -->
+        <div id="vaccine-table">
+            <h3>Vaccine Management</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vaccine Name</th>
+                        <th>Type</th>
+                        <th>Dosage</th>
+                        <th>Manufacturer</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="vaccine-list">
+                    <!-- Vaccine data will be dynamically populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>
+
