@@ -53,6 +53,7 @@ app.listen(3000, () => {
 });
 */
 
+const path = require('path');
 
 const express = require('express');
 const cors = require('cors');
@@ -73,11 +74,14 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions)); // Use the CORS middleware with the specified options
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.use(express.json());
 app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/admin', adminRoutes);
+app.use(express.static('frontend'));
+
 
 // Middleware for verifying JWT token
 const verifyToken = (req, res, next) => {
@@ -117,7 +121,9 @@ app.post('/api/auth/register', (req, res) => {
         });
     });
 });
-
+/*app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/frontend/dashboard/admin.html');
+});*/
 // Admin Dashboard (only accessible by admin)
 app.get('/dashboard/admin', verifyToken, (req, res) => {
     if (req.role !== 'admin') {
@@ -145,6 +151,25 @@ app.get('/dashboard/parent', verifyToken, (req, res) => {
         res.json({ message: 'Parent Dashboard', childData: result });
     });
 });
+
+
+// Mock data for demonstration purposes
+app.get('/admin/overview', (req, res) => {
+    const overviewData = {
+        totalChildren: 100, // Example: Replace with a database query
+        upcomingVaccinations: 20, // Example: Replace with a database query
+    };
+    res.json(overviewData);
+});
+
+app.get('/admin/vaccines', (req, res) => {
+    const vaccineData = [
+        { name: 'Polio', type: 'Oral', dosage: '2 drops', manufacturer: 'XYZ Pharma' },
+        { name: 'Hepatitis B', type: 'Injection', dosage: '1 ml', manufacturer: 'ABC Pharma' },
+    ];
+    res.json(vaccineData);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

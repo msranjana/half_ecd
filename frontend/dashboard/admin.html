@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
 </head>
 <body>
     <!-- Sidebar -->
@@ -34,6 +34,7 @@
         <!-- Children Data Summary -->
         <div id="children-table">
             <h3>Children Data</h3>
+            <button id="add-child-btn">Add Child</button>
             <table>
                 <thead>
                     <tr>
@@ -52,6 +53,7 @@
         <!-- Vaccine Management -->
         <div id="vaccine-table">
             <h3>Vaccine Management</h3>
+            <button id="add-vaccine-btn">Add Vaccine</button>
             <table>
                 <thead>
                     <tr>
@@ -67,9 +69,73 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Vaccine Record Management -->
+        <div id="vaccine-records">
+            <h3>Vaccine Records</h3>
+            <table id="vaccine-record-list">
+                <thead>
+                    <tr>
+                        <th>Child Name</th>
+                        <th>Vaccine Name</th>
+                        <th>Administered Date</th>
+                        <th>Next Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add Child Form (Initially Hidden) -->
+      <!--<div id="add-child-form-container" style="display:none;">
+            <h3>Add New Child</h3>
+            <form id="add-child-form">
+                <input type="text" id="child-name" placeholder="Child Name" required />
+                <input type="number" id="child-age" placeholder="Child Age" required />
+                <input type="text" id="vaccination-status" placeholder="Vaccination Status" required />
+                <button type="submit">Add Child</button>
+                <button type="button" id="cancel-child-btn">Cancel</button>
+            </form>
+        </div> -->
+        <!-- Button to trigger Add Child form -->
+        <button id="add-child-btn">Add Child</button>
+
+        <!-- Add Child Form (Initially Hidden) -->
+        <!-- Add Child Button -->
+<button id="add-child-btn">Add Child</button>
+
+<!-- Add Child Form -->
+<div id="add-child-form-container" style="display: none;">
+    <h2>Add New Child</h2>
+    <form id="add-child-form">
+        <input type="text" id="child-name" placeholder="Child's Name" required />
+        <input type="number" id="child-age" placeholder="Child's Age" required />
+        <select id="vaccination-status">
+            <option value="Vaccinated">Vaccinated</option>
+            <option value="Not Vaccinated">Not Vaccinated</option>
+        </select>
+        <button type="submit">Submit</button>
+        <button type="button" id="cancel-child-btn">Cancel</button>
+    </form>
+</div>
+
+
+        <!-- Add Vaccine Form (Initially Hidden) -->
+        <div id="add-vaccine-form-container" style="display:none;">
+            <h3>Add New Vaccine</h3>
+            <form id="add-vaccine-form">
+                <input type="text" id="vaccine-name" placeholder="Vaccine Name" required />
+                <input type="text" id="vaccine-type" placeholder="Vaccine Type" required />
+                <input type="text" id="manufacturer" placeholder="Manufacturer" required />
+                <button type="submit">Add Vaccine</button>
+                <button type="button" id="cancel-vaccine-btn">Cancel</button>
+            </form>
+        </div>
+        
     </div>
 
-    <script src="js/admin-dashboard.js"></script>
+    <script src="../js/admin-dashboard.js"></script>
 </body>
 </html>
-
